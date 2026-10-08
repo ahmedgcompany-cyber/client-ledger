@@ -1,0 +1,56 @@
+{
+  "name": "client-ledger",
+  "displayName": "Client Ledger",
+  "version": "0.1.0",
+  "author": {
+    "name": "ahmedgcompany-cyber"
+  },
+  "description": "Bill clients for Claude Code work: per-client time, tokens and proof of work, exported as invoice-ready logs",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "hourlyRate": {
+      "type": "number",
+      "title": "Hourly rate",
+      "description": "What you bill per hour of tracked time (0 = don't price hours)",
+      "default": 0,
+      "min": 0
+    },
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "description": "Currency code printed on exports",
+      "default": "USD"
+    },
+    "tokenRatePerMillion": {
+      "type": "number",
+      "title": "Token rate per million",
+      "description": "What you bill per million tokens, on top of hours (0 = don't bill tokens)",
+      "default": 0,
+      "min": 0
+    },
+    "idleMinutes": {
+      "type": "number",
+      "title": "Idle cap (minutes)",
+      "description": "Gaps between your prompts longer than this count only this long as your own work time",
+      "default": 10,
+      "min": 0
+    },
+    "exportDir": {
+      "type": "string",
+      "title": "Export folder",
+      "description": "Where /ledger export writes files (empty = ledger-exports in the current folder)",
+      "default": ""
+    }
+  },
+  "homepage": "https://github.com/ahmedgcompany-cyber/client-ledger",
+  "repository": "https://github.com/ahmedgcompany-cyber/client-ledger",
+  "license": "MIT",
+  "keywords": [
+    "billing",
+    "freelance",
+    "agency",
+    "time-tracking",
+    "invoice",
+    "mod"
+  ]
+}
